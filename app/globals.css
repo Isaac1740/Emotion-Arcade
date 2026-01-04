@@ -24,3 +24,15 @@ body {
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+@keyframes slowPulse {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.97;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
