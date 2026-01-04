@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type EmotionOrbProps = {
   label: string;
@@ -16,6 +17,7 @@ export default function EmotionOrb({
   onHoverEnd,
 }: EmotionOrbProps) {
   const [hovered, setHovered] = useState(false);
+  const router = useRouter();
 
   const glowColor =
     emotion === "angry"
@@ -37,6 +39,7 @@ export default function EmotionOrb({
         setHovered(false);
         onHoverEnd();
       }}
+      onClick={() => router.push(`/emotion/${emotion}`)}
       style={{
         width: 140,
         height: 140,
@@ -66,8 +69,7 @@ export default function EmotionOrb({
             inset 0 0 20px rgba(255,255,255,0.25)
           `,
 
-        transition:
-          "transform 0.25s ease, box-shadow 0.35s ease",
+        transition: "transform 0.25s ease, box-shadow 0.35s ease",
 
         display: "flex",
         alignItems: "center",
