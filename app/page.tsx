@@ -1,54 +1,44 @@
 "use client";
 
 import EmotionOrb from "@/components/EmotionOrb";
-import { useEmotion } from "../emotion/EmotionProvider";
+import { useEmotion } from "@/emotion/EmotionProvider";
+import { emotions } from "@/emotion/emotionConfig";
 
 export default function Home() {
   const { setEmotion } = useEmotion();
 
   return (
-    <main
-      className="h-screen w-full flex flex-col items-center justify-center text-center"
-      style={{ background: "transparent" }}
-    >
-      {/* Heading */}
+    <main className="h-screen w-full flex flex-col items-center justify-center text-center">
       <h1 className="text-4xl font-semibold mb-2 text-white">
         How are you feeling?
       </h1>
 
-      {/* Subtitle */}
       <p className="text-white/60 mb-10 max-w-xl">
         Choose an emotion. There’s no right or wrong — only what feels true for you.
       </p>
 
-      {/* ORB CONTAINER */}
       <div
         style={{
           display: "flex",
-          gap: "64px",
-          marginTop: "32px",
+          gap: "48px",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          maxWidth: "900px",
         }}
       >
-        {/* Angry Orb */}
-        <EmotionOrb
-          label="Angry"
-          emotion="angry"
-          onHoverStart={() => setEmotion("angry")}
-          onHoverEnd={() => setEmotion(null)}
-        />
-
-        {/* Calm Orb */}
-        <EmotionOrb
-          label="Calm"
-          emotion="calm"
-          onHoverStart={() => setEmotion("calm")}
-          onHoverEnd={() => setEmotion(null)}
-        />
+        {Object.entries(emotions).map(([key, emotion]) => (
+          <EmotionOrb
+            key={key}
+            label={emotion.label}
+            emotion={key as any}
+            onHoverStart={() => setEmotion(key as any)}
+            onHoverEnd={() => setEmotion(null)}
+          />
+        ))}
       </div>
 
-      {/* Footer Hint */}
-      <p className="text-sm text-white/40 mt-8">
-        Hover to preview • Click later to enter
+      <p className="text-sm text-white/40 mt-10">
+        Hover to preview • Click to enter
       </p>
     </main>
   );
