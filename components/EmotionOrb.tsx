@@ -64,13 +64,14 @@ export default function EmotionOrb({
             inset 0 0 20px rgba(255,255,255,0.25)
           `,
 
-        transition: "transform 0.25s ease, box-shadow 0.35s ease",
+        transition: "transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         fontSize: 18,
         fontWeight: 500,
-        color: "white",
+        color: "rgba(255,255,255,0.9)",
+        textShadow: "0 1px 2px rgba(0,0,0,0.4)",
         cursor: "pointer",
         userSelect: "none",
       }}

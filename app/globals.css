@@ -27,12 +27,26 @@ body {
 
 @keyframes slowPulse {
   0% {
-    opacity: 0.9;
+    transform: scale(1);
+    opacity: 0.85;
   }
   50% {
-    opacity: 0.97;
+    transform: scale(1.04);
+    opacity: 1;
   }
   100% {
-    opacity: 0.9;
+    transform: scale(1);
+    opacity: 0.85;
   }
 }
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-fade {
+  animation: fadeOut 3s ease forwards;
+}
+
