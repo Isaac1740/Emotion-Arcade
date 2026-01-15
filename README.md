@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🎭 Emotion Arcade
 
-## Getting Started
+Emotion Arcade is a creative, emotion-driven digital space where users don’t play despite their emotions — they play through them.
 
-First, run the development server:
+Instead of asking users to define or explain how they feel, Emotion Arcade lets them choose an emotion and instantly step into an experience designed around it.
+No diagnosis. No labels. Just presence, interaction, and expression.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ Concept
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Everyone experiences emotions differently.
+Emotion Arcade embraces that truth by giving users choice over interpretation rather than enforcing definitions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Each emotion acts as a gateway to:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A unique visual atmosphere
 
-## Learn More
+A distinct interaction style
 
-To learn more about Next.js, take a look at the following resources:
+A mini-experience or game that matches the energy of that emotion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The user decides what feels right — moment to moment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🧠 Core Philosophy
 
-## Deploy on Vercel
+Emotion ≠ Problem to Fix
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Emotion = State to Experience
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Control through choice, not instruction
+
+Emotion Arcade is not a therapy app and not a productivity tool.
+It’s a creative emotional playground designed for reflection, release, curiosity, or simple comfort.
+
+🎮 How It Works
+
+The homepage presents floating emotion orbs
+
+Hovering previews the emotional atmosphere (background, motion, tone)
+
+Clicking commits the user to that emotion
+
+The entire UI transforms to match the selected emotional state
+
+A mini-game or interaction designed for that emotion becomes available
+
+Users can return, switch emotions, or stay as long as they want — no pressure.
+
+🌀 Emotions (Planned & Active)
+
+😠 Angry — release, intensity, controlled chaos
+
+😌 Calm — slow motion, breathing, smooth interactions
+
+😔 Sad — gentle pacing, reflective play
+
+😊 Happy — light movement, playful feedback
+
+😵 Confused — abstract navigation, curiosity-driven design
+
+(Each emotion has its own UI language, animation style, and interaction logic.)
+
+🧩 Features
+
+Emotion-based full-screen theming
+
+Smooth hover-to-preview emotion transitions
+
+Emotion persistence via global state
+
+Desktop-first immersive design
+
+Minimal text, maximum feeling
+
+Optional supportive AI chatbot (planned) for users unsure what they feel
+
+🛠 Tech Stack
+
+Next.js (App Router)
+
+React
+
+Tailwind CSS
+
+Global Emotion Provider (custom context)
+
+Ambient gradient background system
+
+Modular emotion components
+
+🧱 Architecture Highlights
+
+Centralized emotion state management
+
+Emotion preview (hover) vs commit (click) separation
+
+Layered ambient backgrounds reacting to state changes
+
+Emotion-specific UI logic and styling
+
+Designed for scalability (new emotions = plug-and-play)
+
+🚧 Project Status
+
+✅ Core architecture complete
+
+✅ Emotion hover preview system working
+
+✅ Full-screen emotional background reactions
+
+✅ Stable visual baseline committed
+
+🚧 Visual polish & micro-interactions in progress
+
+🚧 Emotion-specific mini-games under development
+
+🌱 Future Plans
+
+Glassmorphism & glow polish
+
+Emotion-specific soundscapes
+
+Advanced micro-interactions
+
+Expanded emotion library
+
+Optional AI emotional companion
+
+PWA / mobile adaptation (later phase)
+
+🧑‍💻 Author
+
+Built with care by Isaac Pranit
+A creative experiment at the intersection of design, emotion, and interaction.
+
+🖤 Final Note
+
+Emotion Arcade doesn’t tell you how to feel.
+It simply gives you a space to be.
