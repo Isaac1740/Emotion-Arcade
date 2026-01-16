@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { emotions } from "@/emotion/emotionConfig";
 import { useEmotion } from "@/emotion/EmotionProvider";
-import AngrySliceGame from "@/components/games/AngrySliceGame";
+import AngryGame from "@/components/games/AngryGame";
+
 
 type Mode = "release" | "control" | "channel";
 
@@ -45,7 +46,7 @@ export default function EmotionPage() {
       }}
     >
       {/* GAME LAYER (only for angry) */}
-      {emotionKey === "angry" && <AngrySliceGame mode={mode} />}
+      {emotionKey === "angry" && <AngryGame mode={mode} />}
 
       {/* UI LAYER */}
       <div className="relative z-10 max-w-xl">
