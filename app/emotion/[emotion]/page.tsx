@@ -7,7 +7,6 @@ import { useEmotion } from "@/emotion/EmotionProvider";
 import AngryGame from "@/components/games/AngryGame";
 
 
-type Mode = "release" | "control" | "channel";
 
 export default function EmotionPage() {
   const params = useParams();
@@ -18,7 +17,6 @@ export default function EmotionPage() {
 
   const { setEmotion } = useEmotion();
 
-  const [mode, setMode] = useState<Mode>("release");
 
   // Sync URL emotion with global emotion state
   useEffect(() => {
@@ -46,7 +44,7 @@ export default function EmotionPage() {
       }}
     >
       {/* GAME LAYER (only for angry) */}
-      {emotionKey === "angry" && <AngryGame mode={mode} />}
+      {emotionKey === "angry" && <AngryGame/>}
 
       {/* UI LAYER */}
       <div className="relative z-10 max-w-xl">
@@ -75,26 +73,6 @@ export default function EmotionPage() {
           </p>
         )}
 
-        {/* MODE SELECTOR (only for angry) */}
-        {emotionKey === "angry" && (
-          <div className="mt-8 flex justify-center gap-4">
-            {(["release", "control", "channel"] as Mode[]).map((m) => (
-              <button
-                key={m}
-                onClick={() => setMode(m)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all
-                  ${
-                    mode === m
-                      ? "bg-red-600 text-white scale-105"
-                      : "bg-white/10 text-white/60 hover:bg-white/20"
-                  }
-                `}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
     </main>
   );
