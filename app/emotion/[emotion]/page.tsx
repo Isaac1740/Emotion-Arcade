@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { emotions } from "@/emotion/emotionConfig";
 import { useEmotion } from "@/emotion/EmotionProvider";
 import AngryGame from "@/components/games/AngryGame";
-
-
+import SadGame from "@/components/games/SadGame";
 
 export default function EmotionPage() {
   const params = useParams();
@@ -16,7 +15,6 @@ export default function EmotionPage() {
   const emotion = emotions[emotionKey];
 
   const { setEmotion } = useEmotion();
-
 
   // Sync URL emotion with global emotion state
   useEffect(() => {
@@ -43,37 +41,39 @@ export default function EmotionPage() {
         background: backgrounds[emotionKey] || "#020617",
       }}
     >
-      {/* GAME LAYER (only for angry) */}
-      {emotionKey === "angry" && <AngryGame/>}
+      {/* GAME LAYER */}
+      {emotionKey === "angry" && <AngryGame />}
+      {emotionKey === "sad" && <SadGame />}
 
-      {/* UI LAYER */}
-      <div className="relative z-10 max-w-xl">
-        {/* Back Button */}
-        <button
-          onClick={() => router.push("/")}
-          className="absolute -top-16 left-0 text-white/60 hover:text-white transition"
-        >
-          ← Back
-        </button>
+      {/* UI LAYER (Hidden for Sad) */}
+      {emotionKey !== "sad" && (
+        <div className="relative z-10 max-w-xl">
+          {/* Back Button */}
+          <button
+            onClick={() => router.push("/")}
+            className="absolute -top-16 left-0 text-white/60 hover:text-white transition"
+          >
+            ← Back
+          </button>
 
-        {/* Emotion Title */}
-        <h1 className="text-5xl font-semibold mb-6 capitalize">
-          {emotion.label}
-        </h1>
+          {/* Emotion Title */}
+          <h1 className="text-5xl font-semibold mb-6 capitalize">
+            {emotion.label}
+          </h1>
 
-        {/* Emotion Message */}
-        <p className="text-white/70 text-lg">
-          {emotion.message}
-        </p>
-
-        {/* Hint */}
-        {emotionKey === "angry" && (
-          <p className="mt-4 text-white/40 text-sm animate-fade">
-            Click or swipe to release
+          {/* Emotion Message */}
+          <p className="text-white/70 text-lg">
+            {emotion.message}
           </p>
-        )}
 
-      </div>
+          {/* Hint */}
+          {emotionKey === "angry" && (
+            <p className="mt-4 text-white/40 text-sm animate-fade">
+              Click or swipe to release
+            </p>
+          )}
+        </div>
+      )}
     </main>
   );
 }
